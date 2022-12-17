@@ -10,6 +10,6 @@ namespace Core.Entites
         public string Description { get; set; }
         public DateTime DeadLine { get; set; }
         public int TeacherId { get; set; }
-        public int StıdentId { get; set; }
+        public int StudentId { get; set; }
     }
 }

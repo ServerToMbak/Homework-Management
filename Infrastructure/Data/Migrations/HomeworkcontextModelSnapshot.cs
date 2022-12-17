@@ -45,7 +45,7 @@ namespace Infrastructure.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int?>("HomeworkId")
+                    b.Property<int>("HomeworkId")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Name")
@@ -79,7 +79,9 @@ namespace Infrastructure.Data.Migrations
                 {
                     b.HasOne("Core.Entites.Homework", "Homework")
                         .WithMany()
-                        .HasForeignKey("HomeworkId");
+                        .HasForeignKey("HomeworkId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Homework");
                 });

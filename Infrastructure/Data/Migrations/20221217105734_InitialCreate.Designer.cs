@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Data.Migrations
 {
     [DbContext(typeof(Homeworkcontext))]
-    [Migration("20221216085326_InitialCreate")]
+    [Migration("20221217105734_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -46,8 +46,8 @@ namespace Infrastructure.Data.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
-
-                    b.Property<int?>("HomeworkId")
+                        
+                    b.Property<int>("HomeworkId")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Name")
@@ -81,7 +81,9 @@ namespace Infrastructure.Data.Migrations
                 {
                     b.HasOne("Core.Entites.Homework", "Homework")
                         .WithMany()
-                        .HasForeignKey("HomeworkId");
+                        .HasForeignKey("HomeworkId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Homework");
                 });

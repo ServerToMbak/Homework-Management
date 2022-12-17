@@ -22,9 +22,9 @@ namespace Infrastructure.Data
             return await _context.Students.FirstOrDefaultAsync(p=>p.Id==id);
         }
 
-        public Task<IReadOnlyList<Student>> GetStudentsAsync()
+        public async Task<IReadOnlyList<Student>> GetStudentsAsync()
         {
-            throw new NotImplementedException();
+            return await _context.Students.ToListAsync();
         }
     }
 }

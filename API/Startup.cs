@@ -1,4 +1,6 @@
 using API.Data;
+using Core.Interfaces;
+using Infrastructure.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -21,7 +23,8 @@ namespace API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            
+            services.AddScoped<IStudentRepository,StudentRepository>();
+            services.AddScoped(typeof(IGenericRepository<>),(typeof (GenericRepository<>)));
             services.AddControllers();
             services.AddDbContext<Homeworkcontext>(x => 
                 x.UseSqlite(_config.GetConnectionString("DefaultConnection")));
@@ -34,10 +37,6 @@ namespace API
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
 
             app.UseHttpsRedirection();
 

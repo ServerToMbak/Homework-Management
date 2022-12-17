@@ -12,22 +12,22 @@ namespace API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class StudentController : Controller
+    public class StudentsController : ControllerBase
     {
         public IStudentRepository _repo { get; }
-        public StudentController(IStudentRepository repo)
+        public StudentsController(IStudentRepository repo)
         {
             _repo = repo;
         }
 
-        [HttpGet]
+        [HttpGet("{id}")]
         public async Task<ActionResult<Student>> getStudent(int id)
         {
             return   Ok(await _repo.GetStudentByIdAsync(id));
         }
         
         
-        [HttpGet("students")]
+        [HttpGet("getAll")]
         public async Task<ActionResult<IReadOnlyList<Student>>> getStudents()
         {
             return   Ok(await _repo.GetStudentsAsync());

@@ -1,10 +1,18 @@
 [
   {
     "Id": 1,
-    "Name": "Boards"
+    "Description": "homework1",
+    "date": "2022-11-04T18:56:26.9461703",
+    "TeacherId": 1, 
+    "StudentId": 1
+
   },
   {
     "Id": 2,
-    "Name": "Hats"
+    "Description": "homework2",
+    "date": "2022-11-04T18:56:26.9461703",
+    "TeacherId": 1, 
+    "StudentId": 1
+
   }
 ]
