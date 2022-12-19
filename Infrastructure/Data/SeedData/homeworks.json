@@ -12,7 +12,55 @@
     "Description": "homework2",
     "date": "2022-11-04T18:56:26.9461703",
     "TeacherId": 1, 
+    "StudentId": 2
+
+  },
+  {
+    "Id": 3,
+    "Description": "homework3",
+    "date": "2022-11-04T18:56:26.9461703",
+    "TeacherId": 1, 
     "StudentId": 1
+
+  },
+  {
+    "Id": 4,
+    "Description": "homework4",
+    "date": "2022-11-04T18:56:26.9461703",
+    "TeacherId": 4, 
+    "StudentId": 3
+
+  },
+  {
+    "Id": 5,
+    "Description": "homework5",
+    "DeadLine": "2022-11-04T18:56:26.9461703",
+    "TeacherId": 2, 
+    "StudentId": 4
+
+  },
+  {
+    "Id": 6,
+    "Description": "homework6",
+    "date": "2022-11-04T18:56:26.9461703",
+    "TeacherId": 3, 
+    "StudentId": 4
+
+  },
+  {
+    "Id": 7,
+    "Description": "homework7",
+    "date": "2022-11-04T18:56:26.9461703",
+    "TeacherId": 4, 
+    "StudentId": 4
+
+  },
+  {
+    "Id": 8,
+    "Description": "homework8",
+    "date": "2022-11-04T18:56:26.9461703",
+    "TeacherId": 1, 
+    "StudentId": 2
 
   }
 ]

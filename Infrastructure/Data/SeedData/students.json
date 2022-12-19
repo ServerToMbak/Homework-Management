@@ -1,12 +1,18 @@
 [
   {
     "id":1,
-    "Name":"server",
-    "HomeworkId":1  
+    "Name":"server"
   },
   {
     "id":2,
-    "Name":"Fayik",
-    "HomeworkId":1  
+    "Name":"Fayik"
+  },
+  {
+    "id":3,
+    "Name":"Yakup" 
+  },
+  {
+    "id":4,
+    "Name":"Fayik"
   }
 ]

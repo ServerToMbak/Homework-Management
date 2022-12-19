@@ -26,15 +26,20 @@ namespace Infrastructure.Data.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Description")
+                        .HasMaxLength(500)
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("StıdentId")
+                    b.Property<int>("StudentId")
                         .HasColumnType("INTEGER");
 
                     b.Property<int>("TeacherId")
                         .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("StudentId");
+
+                    b.HasIndex("TeacherId");
 
                     b.ToTable("Homeworks");
                 });
@@ -45,15 +50,10 @@ namespace Infrastructure.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("HomeworkId")
-                        .HasColumnType("INTEGER");
-
                     b.Property<string>("Name")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("HomeworkId");
 
                     b.ToTable("Students");
                 });
@@ -75,15 +75,28 @@ namespace Infrastructure.Data.Migrations
                     b.ToTable("Teachers");
                 });
 
-            modelBuilder.Entity("Core.Entites.Student", b =>
+            modelBuilder.Entity("Core.Entites.Homework", b =>
                 {
-                    b.HasOne("Core.Entites.Homework", "Homework")
-                        .WithMany()
-                        .HasForeignKey("HomeworkId")
+                    b.HasOne("Core.Entites.Student", "Student")
+                        .WithMany("Homeworks")
+                        .HasForeignKey("StudentId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Homework");
+                    b.HasOne("Core.Entites.Teacher", "Teacher")
+                        .WithMany()
+                        .HasForeignKey("TeacherId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Student");
+
+                    b.Navigation("Teacher");
+                });
+
+            modelBuilder.Entity("Core.Entites.Student", b =>
+                {
+                    b.Navigation("Homeworks");
                 });
 #pragma warning restore 612, 618
         }

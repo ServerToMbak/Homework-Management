@@ -8,6 +8,16 @@
     "Id": 2,
     "Name": "Mehmet",
     "Major": "Fizik"
+  },
+  {
+    "Id": 3,
+    "Name": "Bülent(Çakal)",
+    "Major": "Biyoloji"
+  },
+  {
+    "Id": 4,
+    "Name": "Önder(Kral)",
+    "Major": "Matematik"
   }
   
 ]

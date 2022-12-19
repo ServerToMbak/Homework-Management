@@ -16,19 +16,6 @@ namespace Infrastructure.Data
         {
             try
             {
-
-            if(!context.Homeworks.Any())
-            {
-                 var homeworksData = File.ReadAllText("../Infrastructure/Data/SeedData/homeworks.json");
-
-                 var homeworks = JsonSerializer.Deserialize<List<Homework>>(homeworksData);
-
-                 foreach (var item in homeworks)
-                 {
-                    context.Add(item);
-                 }
-                await context.SaveChangesAsync();
-            }
             if(!context.Teachers.Any())
             {
                  var teacherssData = File.ReadAllText("../Infrastructure/Data/SeedData/teachers.json");
@@ -41,13 +28,25 @@ namespace Infrastructure.Data
                  }
                 await context.SaveChangesAsync();
             }
-            if(!context.Students.Any())
+             if(!context.Students.Any())
             {
                  var studentsData = File.ReadAllText("../Infrastructure/Data/SeedData/students.json");
 
                  var students = JsonSerializer.Deserialize<List<Student>>(studentsData);
 
                  foreach (var item in students)
+                 {
+                    context.Add(item);
+                 }
+                await context.SaveChangesAsync();
+            }
+            if(!context.Homeworks.Any())
+            {
+                 var homeworksData = File.ReadAllText("../Infrastructure/Data/SeedData/homeworks.json");
+
+                 var homeworks = JsonSerializer.Deserialize<List<Homework>>(homeworksData);
+
+                 foreach (var item in homeworks)
                  {
                     context.Add(item);
                  }

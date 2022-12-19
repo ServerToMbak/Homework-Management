@@ -12,7 +12,7 @@ namespace API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class StudentsController : ControllerBase
+    public class StudentsController : BaseApiController
     {
         public IStudentRepository _repo { get; }
         public StudentsController(IStudentRepository repo)

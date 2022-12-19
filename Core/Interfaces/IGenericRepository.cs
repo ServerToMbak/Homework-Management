@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Core.Entites;
+using Core.Specifications;
 
 namespace Core.Interfaces
 {
@@ -13,7 +14,7 @@ namespace Core.Interfaces
         Task<T> GetByIdAsycn(int id);//id ile asenkron olarak tek entity döndüren metot 
         Task<IReadOnlyList<T>> ListAllAsync(); //Generic olarak verilen entity türündeki tüm veriyi 
         //asenkron olarak döndüren metot 
-
+        Task<T> GetEntityWithSpec(ISpecification<T> spec);
         
     }
 }
